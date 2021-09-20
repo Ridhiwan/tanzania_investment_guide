@@ -1,0 +1,7 @@
+library(dplyr)
+library(tidyverse)
+install.packages("leaflet.minicharts")
+library(leaflet.minicharts)
+data("eco2mix")
+tzeco2mix <- eco2mix %>% select(-c(balanceUK,balanceES,balanceIT, balanceCH,balanceDEBE, import,export))
+tzeco2mixx <- tzeco2mix %>% drop_na()
