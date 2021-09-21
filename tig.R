@@ -22,10 +22,10 @@ tzeco2mixx$area[tzeco2mixx$area == "Normandie"] <- "Zanzibar"
 tzeco2mixx$area[tzeco2mixx$area == "PACA"] <- "Kigoma"
 tzeco2mixx$area[tzeco2mixx$area == "France"] <- "Tanzania"
 
-tzeco2mixx$lat[tzeco2mixx$area == "Dar-es-Salaam"] <- -6.776012
-tzeco2mixx$lng[tzeco2mixx$area == "Dar-es-Salaam"] <- 39.178326
-tzeco2mixx$lat[tzeco2mixx$area == "Tanga"] <- -5.06893
-tzeco2mixx$lng[tzeco2mixx$area == "Tanga"] <- 39.09875
+tzeco2mixx$lat[tzeco2mixx$area == "Dar-es-Salaam"] <- -6.823074
+tzeco2mixx$lng[tzeco2mixx$area == "Dar-es-Salaam"] <- 39.209116
+tzeco2mixx$lat[tzeco2mixx$area == "Tanga"] <- -5.291219
+tzeco2mixx$lng[tzeco2mixx$area == "Tanga"] <- 38.223867
 tzeco2mixx$lat[tzeco2mixx$area == "Iringa"] <- -7.773094
 tzeco2mixx$lng[tzeco2mixx$area == "Iringa"] <- 35.699120
 tzeco2mixx$lat[tzeco2mixx$area == "Mwanza"] <- -2.51667
@@ -42,13 +42,83 @@ tzeco2mixx$lat[tzeco2mixx$area == "Mbeya"] <- -8.909401
 tzeco2mixx$lng[tzeco2mixx$area == "Mbeya"] <- 33.460773
 tzeco2mixx$lat[tzeco2mixx$area == "Tabora"] <- -5.030461
 tzeco2mixx$lng[tzeco2mixx$area == "Tabora"] <- 32.819431
-tzeco2mixx$lat[tzeco2mixx$area == "Kigoma"] <- -4.893941
-tzeco2mixx$lng[tzeco2mixx$area == "Kigoma"] <- 29.673386
+tzeco2mixx$lat[tzeco2mixx$area == "Kigoma"] <- -4.675572
+tzeco2mixx$lng[tzeco2mixx$area == "Kigoma"] <- 30.306029
 tzeco2mixx$lat[tzeco2mixx$area == "Morogoro"] <- -6.830373
 tzeco2mixx$lng[tzeco2mixx$area == "Morogoro"] <- 37.670589
 tzeco2mixx$lat[tzeco2mixx$area == "Tanzania"] <- -6.776012
 tzeco2mixx$lng[tzeco2mixx$area == "Tanzania"] <- 39.178326
 
+Kagera <- eco2mix %>% drop_na() %>% filter(area == "France") %>% select(-c(balanceUK,balanceES,balanceIT, balanceCH,balanceDEBE, import,export))
+Kagera$area[Kagera$area == "France"] <- "Kagera"
+Kagera$lat[Kagera$area == "Kagera"] <- -1.916663
+Kagera$lng[Kagera$area == "Kagera"] <- 31.2999988
+tzeco2mixx <- rbind2(tzeco2mixx,Kagera)
+Mara <- eco2mix %>% drop_na() %>% filter(area == "France") %>% select(-c(balanceUK,balanceES,balanceIT, balanceCH,balanceDEBE, import,export))
+Mara$area[Mara$area == "France"] <- "Mara"
+Mara$lat[Mara$area == "Mara"] <- -1.83333
+Mara$lng[Mara$area == "Mara"] <- 34.41667
+tzeco2mixx <- rbind2(tzeco2mixx,Mara)
+Simiyu <- eco2mix %>% drop_na() %>% filter(area == "France") %>% select(-c(balanceUK,balanceES,balanceIT, balanceCH,balanceDEBE, import,export))
+Simiyu$area[Simiyu$area == "France"] <- "Simiyu"
+Simiyu$lat[Simiyu$area == "Simiyu"] <- -3.004841
+Simiyu$lng[Simiyu$area == "Simiyu"] <- 34.276829
+tzeco2mixx <- rbind2(tzeco2mixx,Simiyu)
+Geita <- eco2mix %>% drop_na() %>% filter(area == "France") %>% select(-c(balanceUK,balanceES,balanceIT, balanceCH,balanceDEBE, import,export))
+Geita$area[Geita$area == "France"] <- "Geita"
+Geita$lat[Geita$area == "Geita"] <- -2.86667
+Geita$lng[Geita$area == "Geita"] <- 32.16667
+tzeco2mixx <- rbind2(tzeco2mixx,Geita)
+Manyara <- eco2mix %>% drop_na() %>% filter(area == "France") %>% select(-c(balanceUK,balanceES,balanceIT, balanceCH,balanceDEBE, import,export))
+Manyara$area[Manyara$area == "France"] <- "Manyara"
+Manyara$lat[Manyara$area == "Manyara"] <- -4.749997
+Manyara$lng[Manyara$area == "Manyara"] <- 36.666664
+tzeco2mixx <- rbind2(tzeco2mixx,Manyara)
+Singida <- eco2mix %>% drop_na() %>% filter(area == "France") %>% select(-c(balanceUK,balanceES,balanceIT, balanceCH,balanceDEBE, import,export))
+Singida$area[Singida$area == "France"] <- "Singida"
+Singida$lat[Singida$area == "Singida"] <- -4.81629
+Singida$lng[Singida$area == "Singida"] <- 34.74358
+tzeco2mixx <- rbind2(tzeco2mixx,Singida)
+Pwani <- eco2mix %>% drop_na() %>% filter(area == "France") %>% select(-c(balanceUK,balanceES,balanceIT, balanceCH,balanceDEBE, import,export))
+Pwani$area[Pwani$area == "France"] <- "Pwani"
+Pwani$lat[Pwani$area == "Pwani"] <- -7.0
+Pwani$lng[Pwani$area == "Pwani"] <- 39.0
+tzeco2mixx <- rbind2(tzeco2mixx,Pwani)
+Lindi <- eco2mix %>% drop_na() %>% filter(area == "France") %>% select(-c(balanceUK,balanceES,balanceIT, balanceCH,balanceDEBE, import,export))
+Lindi$area[Lindi$area == "France"] <- "Lindi"
+Lindi$lat[Lindi$area == "Lindi"] <- -9.514464
+Lindi$lng[Lindi$area == "Lindi"] <- 38.383706
+tzeco2mixx <- rbind2(tzeco2mixx,Lindi)
+Ruvuma <- eco2mix %>% drop_na() %>% filter(area == "France") %>% select(-c(balanceUK,balanceES,balanceIT, balanceCH,balanceDEBE, import,export))
+Ruvuma$area[Ruvuma$area == "France"] <- "Ruvuma"
+Ruvuma$lat[Ruvuma$area == "Ruvuma"] <- -11.0
+Ruvuma$lng[Ruvuma$area == "Ruvuma"] <- 36.0
+tzeco2mixx <- rbind2(tzeco2mixx,Ruvuma)
+Rukwa <- eco2mix %>% drop_na() %>% filter(area == "France") %>% select(-c(balanceUK,balanceES,balanceIT, balanceCH,balanceDEBE, import,export))
+Rukwa$area[Rukwa$area == "France"] <- "Rukwa"
+Rukwa$lat[Rukwa$area == "Rukwa"] <-  -7.507073
+Rukwa$lng[Rukwa$area == "Rukwa"] <- 31.000140
+tzeco2mixx <- rbind2(tzeco2mixx,Rukwa)
+Njombe <- eco2mix %>% drop_na() %>% filter(area == "France") %>% select(-c(balanceUK,balanceES,balanceIT, balanceCH,balanceDEBE, import,export))
+Njombe$area[Njombe$area == "France"] <- "Njombe"
+Njombe$lat[Njombe$area == "Njombe"] <- -9.33333
+Njombe$lng[Njombe$area == "Njombe"] <- 34.76667
+tzeco2mixx <- rbind2(tzeco2mixx,Njombe)
+Katavi <- eco2mix %>% drop_na() %>% filter(area == "France") %>% select(-c(balanceUK,balanceES,balanceIT, balanceCH,balanceDEBE, import,export))
+Katavi$area[Katavi$area == "France"] <- "Katavi"
+Katavi$lat[Katavi$area == "Katavi"] <- -6.4
+Katavi$lng[Katavi$area == "Katavi"] <- 31.33333
+tzeco2mixx <- rbind2(tzeco2mixx,Katavi)
+Kilimanjaro <- eco2mix %>% drop_na() %>% filter(area == "France") %>% select(-c(balanceUK,balanceES,balanceIT, balanceCH,balanceDEBE, import,export))
+Kilimanjaro$area[Kilimanjaro$area == "France"] <- "Kilimanjaro"
+Kilimanjaro$lat[Kilimanjaro$area == "Kilimanjaro"] <- -3.075333032
+Kilimanjaro$lng[Kilimanjaro$area == "Kilimanjaro"] <-  37.354831914
+tzeco2mixx <- rbind2(tzeco2mixx,Kilimanjaro)
+Dodoma <- eco2mix %>% drop_na() %>% filter(area == "France") %>% select(-c(balanceUK,balanceES,balanceIT, balanceCH,balanceDEBE, import,export))
+Dodoma$area[Dodoma$area == "France"] <- "Dodoma"
+Dodoma$lat[Dodoma$area == "Dodoma"] <- -5.634214
+Dodoma$lng[Dodoma$area == "Dodoma"] <- 36.025128
+tzeco2mixx <- rbind2(tzeco2mixx,Dodoma)
 
 prod2016 <- tzeco2mixx %>%
 mutate(
@@ -74,3 +144,6 @@ chartdata = prod2016[, c("renewable", "non_renewable")],
 colorPalette = colors,
 width = 60 * sqrt(prod2016$total) / sqrt(max(prod2016$total)), transitionTime = 0
 )
+
+
+
