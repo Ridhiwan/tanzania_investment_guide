@@ -1,5 +1,4 @@
 library(tidyverse)
-install.packages("leaflet.minicharts")
 library(leaflet.minicharts)
 library(leaflet)
 data("eco2mix")
@@ -81,8 +80,8 @@ Singida$lng[Singida$area == "Singida"] <- 34.74358
 tzeco2mixx <- rbind2(tzeco2mixx,Singida)
 Pwani <- eco2mix %>% drop_na() %>% filter(area == "France") %>% select(-c(balanceUK,balanceES,balanceIT, balanceCH,balanceDEBE, import,export))
 Pwani$area[Pwani$area == "France"] <- "Pwani"
-Pwani$lat[Pwani$area == "Pwani"] <- -7.0
-Pwani$lng[Pwani$area == "Pwani"] <- 39.0
+Pwani$lat[Pwani$area == "Pwani"] <- -7.872839
+Pwani$lng[Pwani$area == "Pwani"] <- 38.815894
 tzeco2mixx <- rbind2(tzeco2mixx,Pwani)
 Lindi <- eco2mix %>% drop_na() %>% filter(area == "France") %>% select(-c(balanceUK,balanceES,balanceIT, balanceCH,balanceDEBE, import,export))
 Lindi$area[Lindi$area == "France"] <- "Lindi"
@@ -145,5 +144,31 @@ colorPalette = colors,
 width = 60 * sqrt(prod2016$total) / sqrt(max(prod2016$total)), transitionTime = 0
 )
 
+renewable2016 <- prod2016 %>% select(hydraulic, solar, wind)
+colors <- c("#3093e5", "#fcba50", "#a0d9e8")
+basemap %>%
+addMinicharts(
+prod2016$lng, prod2016$lat,
+chartdata = renewable2016,
+colorPalette = colors,
+width = 45, height = 45
+)
 
+basemap %>%
+addMinicharts(
+prod2016$lng, prod2016$lat,
+chartdata = prod2016$load,
+showLabels = TRUE,
+width = 45
+)
+
+prodRegions <- tzeco2mixx %>% filter(area != "Tanzania")
+basemap %>%
+addMinicharts(
+prodRegions$lng, prodRegions$lat,
+chartdata = prodRegions[, c("hydraulic", "solar", "wind")],
+time = prodRegions$month,
+colorPalette = colors,
+width = 45, height = 45
+)
 
