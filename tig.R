@@ -172,3 +172,5 @@ colorPalette = colors,
 width = 45, height = 45
 )
 
+prodCols <- names(prodRegions)[6:13]
+
