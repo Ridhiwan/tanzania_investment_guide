@@ -12,9 +12,8 @@ library(leaflet)
 library(leaflet.minicharts)
 
 ui <- fluidPage(
-    titlePanel("Demo of leaflet.minicharts"),
-    p("This application uses the data.frame 'eco2mix', included in the 'leaflet.minicharts' packages.",
-      "It contains the monthly electric production of french regions from 2013 to 2017."),
+    titlePanel("Tanzania Investment Guide Data"),
+    p("This application shows the current data that is crucial, prior to investing into different lucrativeindustries in Tanzania."),
     
     sidebarLayout(
         
